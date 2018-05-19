@@ -30,7 +30,7 @@ public class KNNAnimalController {
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/sayHi", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Map<String, String> tryHi(@RequestBody AnimalAttributes animalAttributes) throws Exception {
+    public Map<String, String> tryHi() {
         Map<String, String> map = new HashMap<>();
         map.put("result", "Hi");
 
