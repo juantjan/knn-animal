@@ -6,4 +6,5 @@ package ac.id.ukdw.juan.knnanimal.entity;
 
 public class ClassBaru {
     int a;
+    int b;
 }
