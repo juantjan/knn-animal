@@ -36,4 +36,12 @@ public class KNNAnimalController {
 
         return map;
     }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/sayAdsis", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Map<String, String> adsisWoi() {
+        Map<String, String> map = new HashMap<>();
+        map.put("result", "HALO SAYA ADSIS");
+
+        return map;
+    }
 }
