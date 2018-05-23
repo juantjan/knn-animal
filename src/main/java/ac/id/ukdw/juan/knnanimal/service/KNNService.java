@@ -195,6 +195,8 @@ public class KNNService {
 
     public String eval() throws Exception {
         Evaluation eval = new Evaluation(data);
+        ibk = new IBk(1);
+        ibk.buildClassifier(data);
         eval.evaluateModel(ibk, data);
         String result = "** KNN Demo  **";
         result += System.lineSeparator() + eval.toSummaryString();

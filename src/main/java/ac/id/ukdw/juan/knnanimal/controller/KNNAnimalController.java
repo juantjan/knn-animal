@@ -4,10 +4,7 @@ import ac.id.ukdw.juan.knnanimal.entity.AnimalAttributes;
 import ac.id.ukdw.juan.knnanimal.service.KNNService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -16,6 +13,7 @@ import java.util.Map;
  * Created by Juan on 5/18/18.
  */
 @RestController
+@CrossOrigin(origins = "*")
 public class KNNAnimalController {
 
     @Autowired
