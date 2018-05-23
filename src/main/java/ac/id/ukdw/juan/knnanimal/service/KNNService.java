@@ -150,10 +150,12 @@ public class KNNService {
         inst.setValue(dataPredict.attribute(14),animalAttributes.getDomestic());
         inst.setValue(dataPredict.attribute(15),animalAttributes.getCatsize());
         dataPredict.add(0, inst);
+        data.add(inst);
 
 
-        Instance instancePredict = dataPredict.instance(0);
 
+//        Instance instancePredict = dataPredict.instance(0);
+        Instance instancePredict = data.lastInstance();
         Double result = ibk.classifyInstance(instancePredict);
 
         Integer resultInteger = result.intValue();
@@ -189,5 +191,17 @@ public class KNNService {
 
         return namaHewan + " dikategorikan " + resultString;
 //        System.out.println(ibk.classifyInstance(instancePredict));
+    }
+
+    public String eval() throws Exception {
+        Evaluation eval = new Evaluation(data);
+        eval.evaluateModel(ibk, data);
+        String result = "** KNN Demo  **";
+        result += System.lineSeparator() + eval.toSummaryString();
+        result += System.lineSeparator() + eval.toClassDetailsString();
+        result += System.lineSeparator() + eval.toMatrixString();
+
+
+        return result;
     }
 }

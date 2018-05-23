@@ -44,4 +44,12 @@ public class KNNAnimalController {
 
         return map;
     }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/eval", produces = MediaType.APPLICATION_JSON_VALUE)
+    public String eval() throws Exception {
+//        Map<String, String> map = new HashMap<>();
+//        map.put("result", knnService.eval());
+
+        return knnService.eval();
+    }
 }
