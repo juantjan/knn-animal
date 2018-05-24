@@ -27,6 +27,12 @@ public class KNNAnimalController {
         return map;
     }
 
+    @RequestMapping(method = RequestMethod.GET, value = "/newTraining", produces = MediaType.APPLICATION_JSON_VALUE)
+    public String newTraining(@RequestHeader Integer k) throws Exception {
+        knnService.training(k);
+        return knnService.eval();
+    }
+
     @RequestMapping(method = RequestMethod.GET, value = "/sayHi", produces = MediaType.APPLICATION_JSON_VALUE)
     public Map<String, String> tryHi() {
         Map<String, String> map = new HashMap<>();

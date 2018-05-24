@@ -113,7 +113,7 @@ public class KNNService {
 
     }
 
-    private void training(Integer k) throws Exception {
+    public void training(Integer k) throws Exception {
         Instances dataBefore = getDataSet("zoo.arff");
 
         data = Filter.useFilter(dataBefore, filterRemoveFirstAttribute(dataBefore));
