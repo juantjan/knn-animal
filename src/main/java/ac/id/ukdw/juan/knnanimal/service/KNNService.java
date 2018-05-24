@@ -195,10 +195,11 @@ public class KNNService {
 
     public String eval() throws Exception {
         Evaluation eval = new Evaluation(data);
-        ibk = new IBk(1);
         ibk.buildClassifier(data);
         eval.evaluateModel(ibk, data);
-        String result = "** KNN Demo  **";
+        String result = ibk.toString();
+
+        result += System.lineSeparator() +  "** KNN Demo  **";
         result += System.lineSeparator() + eval.toSummaryString();
         result += System.lineSeparator() + eval.toClassDetailsString();
         result += System.lineSeparator() + eval.toMatrixString();
